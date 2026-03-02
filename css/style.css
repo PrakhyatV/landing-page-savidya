@@ -164,6 +164,7 @@ body {
     color: #1a2b5c;
     line-height: 1.2;
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .launch-box .launch-subtitle {
@@ -171,6 +172,7 @@ body {
     color: #333;
     margin-bottom: 12px;
     font-weight: 700;
+    text-align: center;
 }
 
 .launch-box .minister-name {
@@ -178,6 +180,7 @@ body {
     font-weight: 700;
     color: #1a2b5c;
     margin-bottom: 12px;
+    text-align: center;
 }
 
 .launch-box .minister-title {
@@ -186,6 +189,7 @@ body {
     line-height: 1.6;
     margin-bottom: 30px;
     font-weight: 700;
+    text-align: center;
 }
 
 .launch-box .minister-image {
@@ -327,31 +331,16 @@ body {
 
 /* Countdown Section (Inline) */
 .countdown-section {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background: #ffffff;
-    z-index: 100;
-    margin: 0;
-}
-
-/* When countdown is in the portal box */
-.portal-box .countdown-section {
-    position: absolute;
-    top: -12px;
-    left: -15px;
-    right: -15px;
-    bottom: -12px;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 32px 25px;
+    padding: 60px 80px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 34px;
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 1;
 }
 
 .countdown-inline-content {
@@ -359,7 +348,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 30px;
 }
 
 /* Countdown Logo and Tagline */
@@ -392,7 +381,7 @@ body {
 }
 
 .savidya-title-countdown {
-    font-size: 42px;
+    font-size: 56px;
     font-weight: 700;
     color: #2d3e8f;
     line-height: 1.1;
@@ -401,18 +390,18 @@ body {
 }
 
 .countdown-tagline-inline {
-    font-size: 16px;
+    font-size: 20px;
     color: #555;
     font-weight: 600;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
 .countdown-url-inline {
-    font-size: 18px;
+    font-size: 24px;
     color: #1a2b5c;
     font-weight: 600;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .scroll-row {
