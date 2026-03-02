@@ -226,7 +226,7 @@ body {
 
 /* Savidya Text Logo */
 .savidya-text-logo {
-    background-color: white;
+    background-color: transparent;
     padding: 25px 40px;
     border-radius: 8px;
     text-align: center;
