@@ -23,34 +23,41 @@ window.addEventListener('scroll', function() {
 });
 
 // Countdown and Launch functionality
-document.querySelector('.launch-btn').addEventListener('click', function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const launchBtn = document.querySelector('.launch-btn');
     
-    const modal = document.getElementById('countdownModal');
-    const countdownNumber = document.getElementById('countdownNumber');
-    const targetUrl = this.getAttribute('href');
-    
-    // Show modal
-    modal.classList.add('active');
-    
-    let count = 5;
-    countdownNumber.textContent = count;
-    
-    const countdownInterval = setInterval(function() {
-        count--;
-        
-        if (count > 0) {
-            // Reset animation by removing and re-adding the element
-            const newNumber = countdownNumber.cloneNode(true);
-            newNumber.textContent = count;
-            countdownNumber.parentNode.replaceChild(newNumber, countdownNumber);
-            countdownNumber = newNumber;
-        } else {
-            clearInterval(countdownInterval);
-            // Redirect to the target URL
-            window.open(targetUrl, '_blank');
-            // Hide modal
-            modal.classList.remove('active');
-        }
-    }, 1000);
+    if (launchBtn) {
+        launchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const modal = document.getElementById('countdownModal');
+            const countdownNumberEl = document.getElementById('countdownNumber');
+            const targetUrl = this.getAttribute('href');
+            
+            // Show modal
+            modal.classList.add('active');
+            
+            let count = 5;
+            countdownNumberEl.textContent = count;
+            
+            const countdownInterval = setInterval(function() {
+                count--;
+                
+                if (count > 0) {
+                    countdownNumberEl.textContent = count;
+                    // Trigger animation by removing and re-adding class
+                    countdownNumberEl.style.animation = 'none';
+                    setTimeout(function() {
+                        countdownNumberEl.style.animation = 'countdownPulse 1s ease-in-out';
+                    }, 10);
+                } else {
+                    clearInterval(countdownInterval);
+                    // Redirect to the target URL
+                    window.open(targetUrl, '_blank');
+                    // Hide modal
+                    modal.classList.remove('active');
+                }
+            }, 1000);
+        });
+    }
 });
