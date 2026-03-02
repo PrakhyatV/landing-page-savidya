@@ -168,6 +168,58 @@ body {
     margin: 0;
 }
 
+/* Launch Section */
+.launch-section {
+    background: linear-gradient(to bottom, #f5f5f5 0%, #ffffff 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.launch-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.launch-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a2b5c;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.launch-subtitle {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.minister-name {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1a2b5c;
+    margin-bottom: 15px;
+}
+
+.minister-title {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.minister-image {
+    margin-top: 40px;
+}
+
+.minister-image img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-wrapper {
@@ -196,6 +248,22 @@ body {
     .hero {
         margin-top: 150px;
     }
+
+    .launch-title {
+        font-size: 32px;
+    }
+
+    .minister-name {
+        font-size: 28px;
+    }
+
+    .minister-title {
+        font-size: 16px;
+    }
+
+    .minister-image img {
+        max-width: 300px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -209,5 +277,21 @@ body {
 
     .logo {
         height: 40px;
+    }
+
+    .launch-title {
+        font-size: 24px;
+    }
+
+    .minister-name {
+        font-size: 24px;
+    }
+
+    .minister-title {
+        font-size: 14px;
+    }
+
+    .minister-image img {
+        max-width: 250px;
     }
 }
