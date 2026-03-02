@@ -125,7 +125,7 @@ body {
 /* Hero Section */
 .hero {
     background-color: #f5f5f5;
-    padding: 20px 0;
+    padding: 8px 0;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -134,7 +134,7 @@ body {
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -142,7 +142,7 @@ body {
 .hero-box {
     background: white;
     border-radius: 8px;
-    padding: 30px 25px;
+    padding: 12px 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -152,35 +152,35 @@ body {
 }
 
 .launch-box .launch-title {
-    font-size: 36px;
+    font-size: 26px;
     font-weight: 700;
     color: #1a2b5c;
-    line-height: 1.3;
-    margin-bottom: 20px;
+    line-height: 1.2;
+    margin-bottom: 10px;
 }
 
 .launch-box .launch-subtitle {
-    font-size: 18px;
+    font-size: 13px;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .launch-box .minister-name {
-    font-size: 36px;
+    font-size: 26px;
     font-weight: 700;
     color: #1a2b5c;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .launch-box .minister-title {
-    font-size: 14px;
+    font-size: 11px;
     color: #555;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    line-height: 1.4;
+    margin-bottom: 12px;
 }
 
 .launch-box .minister-image {
-    margin-top: 30px;
+    margin-top: 12px;
 }
 
 .launch-box .minister-image img {
@@ -222,27 +222,28 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: flex-start;
-    gap: 15px;
-    padding-top: 10px;
+    justify-content: space-between;
+    gap: 6px;
+    padding-top: 0;
+    position: relative;
 }
 
 .portal-logo {
     text-align: center;
     margin-bottom: 0;
-    margin-top: -20px;
+    margin-top: -8px;
 }
 
 .portal-logo img {
     max-width: 250px;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .portal-logo .portal-tagline {
-    margin-top: 25px;
+    margin-top: 10px;
     margin-bottom: 0;
-    font-size: 24px;
+    font-size: 16px;
     color: #555;
     font-weight: 600;
 }
@@ -250,14 +251,14 @@ body {
 /* Savidya Text Logo */
 .savidya-text-logo {
     background-color: transparent;
-    padding: 15px 40px;
+    padding: 6px 20px;
     border-radius: 8px;
     text-align: center;
     display: inline-block;
 }
 
 .logo-bar {
-    height: 14px;
+    height: 9px;
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -265,24 +266,25 @@ body {
 
 .logo-bar.orange {
     background-color: #f39c12;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .logo-bar.green {
     background-color: #52b788;
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 .savidya-title {
-    font-size: 72px;
+    font-size: 50px;
     font-weight: 700;
     color: #2d3e8f;
     line-height: 1.1;
+    letter-spacing: 6px;
     margin: 0;
 }
 
 .portal-tagline {
-    font-size: 18px;
+    font-size: 14px;
     color: #555;
     font-weight: 500;
 }
@@ -296,16 +298,106 @@ body {
 .image-grid {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 0 20px;
+    gap: 5px;
+    padding: 0 12px;
     max-width: 600px;
     margin: 0 auto;
     overflow: hidden;
 }
 
+/* Countdown Section (Inline) */
+.countdown-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #ffffff;
+    z-index: 100;
+    margin: 0;
+}
+
+/* When countdown is in the portal box */
+.portal-box .countdown-section {
+    position: absolute;
+    top: -12px;
+    left: -15px;
+    right: -15px;
+    bottom: -12px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 32px 25px;
+}
+
+.countdown-inline-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Countdown Logo and Tagline */
+.countdown-logo-inline {
+    text-align: center;
+}
+
+.savidya-text-logo-countdown {
+    background-color: transparent;
+    padding: 5px 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+.logo-bar-countdown {
+    height: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.logo-bar-countdown.orange {
+    background-color: #f39c12;
+    margin-bottom: 8px;
+}
+
+.logo-bar-countdown.green {
+    background-color: #52b788;
+    margin-top: 8px;
+}
+
+.savidya-title-countdown {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2d3e8f;
+    line-height: 1.1;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.countdown-tagline-inline {
+    font-size: 16px;
+    color: #555;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.countdown-url-inline {
+    font-size: 18px;
+    color: #1a2b5c;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
 .scroll-row {
     display: flex;
-    gap: 8px;
+    gap: 5px;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
@@ -338,11 +430,11 @@ body {
 
 .grid-item {
     flex-shrink: 0;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .grid-item img {
@@ -383,38 +475,51 @@ body {
 
 .portal-link {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    gap: 10px;
+    padding: 12px 10px;
+    background: transparent;
     margin-top: auto;
 }
 
+.website-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
 .website-icon {
-    font-size: 24px;
+    font-size: 22px;
+    color: #1a2b5c;
 }
 
 .website-url {
-    font-size: 16px;
-    color: #333;
-    font-weight: 500;
+    font-size: 18px;
+    color: #1a2b5c;
+    font-weight: 700;
 }
 
 .launch-btn {
-    background-color: #1a2b5c;
+    background: linear-gradient(135deg, #1a2b5c 0%, #0f1d3d 100%);
     color: white;
-    padding: 12px 30px;
-    border-radius: 4px;
+    padding: 12px 60px;
+    border-radius: 14px;
     text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 16px rgba(26, 43, 92, 0.4);
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
 }
 
 .launch-btn:hover {
-    background-color: #0f1d3d;
+    background: linear-gradient(135deg, #0f1d3d 0%, #0a1428 100%);
+    box-shadow: 0 7px 20px rgba(26, 43, 92, 0.5);
+    transform: translateY(-2px);
 }
 
 /* Countdown Modal */
@@ -505,38 +610,50 @@ body {
 
 .countdown-circle {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .countdown-svg {
     transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .countdown-bg {
     fill: none;
-    stroke: #e0e0e0;
-    stroke-width: 12;
+    stroke: #e8e8e8;
+    stroke-width: 8;
 }
 
 .countdown-progress {
     fill: none;
     stroke: #f39c12;
-    stroke-width: 12;
+    stroke-width: 8;
     stroke-linecap: round;
-    stroke-dasharray: 565.48;
-    stroke-dashoffset: 565.48;
+    stroke-dasharray: 358.14;
+    stroke-dashoffset: 358.14;
     transition: stroke-dashoffset 1s linear;
 }
 
 .countdown-number {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
+    position: relative;
+    font-size: 50px;
     font-weight: 700;
-    color: #333;
+    color: #1a2b5c;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+    font-weight: 700;
+    color: #1a2b5c;
+    line-height: 1;
 }
 
 .countdown-url {
@@ -675,13 +792,18 @@ body {
         max-width: 180px;
     }
 
+    .website-icon {
+        font-size: 24px;
+    }
+
     .website-url {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .launch-btn {
-        padding: 10px 20px;
-        font-size: 14px;
+        padding: 16px 60px;
+        font-size: 20px;
+        border-radius: 16px;
     }
 
     .savidya-title {

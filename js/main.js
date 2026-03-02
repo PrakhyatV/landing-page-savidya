@@ -25,21 +25,82 @@ window.addEventListener('scroll', function() {
 // Countdown and Launch functionality
 document.addEventListener('DOMContentLoaded', function() {
     const launchBtn = document.querySelector('.launch-btn');
+    const countdownSection = document.getElementById('countdownSection');
+    const portalLogo = document.querySelector('.portal-logo');
+    const portalLink = document.querySelector('.portal-link');
+    
+    // Reset page state function
+    function resetPageState() {
+        if (countdownSection) {
+            countdownSection.style.display = 'none';
+        }
+        if (portalLogo) {
+            portalLogo.style.display = 'block';
+        }
+        if (portalLink) {
+            portalLink.style.display = 'flex';
+        }
+        // Reset countdown number and progress
+        const countdownNumberEl = document.getElementById('countdownNumberInline');
+        const progressCircle = document.getElementById('progressCircleInline');
+        if (countdownNumberEl) countdownNumberEl.textContent = '5';
+        if (progressCircle) {
+            const radius = 57;
+            const circumference = 2 * Math.PI * radius;
+            progressCircle.style.strokeDashoffset = circumference;
+        }
+    }
+    
+    // Always reset on page load
+    resetPageState();
+    
+    // Handle back/forward navigation - multiple event listeners for better compatibility
+    window.addEventListener('pageshow', function(event) {
+        // This fires when page is shown (including back button)
+        resetPageState();
+    });
+    
+    window.addEventListener('popstate', function(event) {
+        // This fires on back/forward button
+        resetPageState();
+    });
+    
+    // Additional check using unload event
+    window.addEventListener('beforeunload', function() {
+        // Store state before leaving
+        sessionStorage.setItem('countdownActive', 'false');
+    });
+    
+    // Check session storage on load
+    if (sessionStorage.getItem('countdownActive') === 'true') {
+        resetPageState();
+        sessionStorage.setItem('countdownActive', 'false');
+    }
     
     if (launchBtn) {
         launchBtn.addEventListener('click', function(e) {
             e.preventDefault();
             
-            const modal = document.getElementById('countdownModal');
-            const countdownNumberEl = document.getElementById('countdownNumber');
-            const progressCircle = document.getElementById('progressCircle');
+            const countdownNumberEl = document.getElementById('countdownNumberInline');
+            const progressCircle = document.getElementById('progressCircleInline');
             const targetUrl = this.getAttribute('href');
             
-            // Show modal
-            modal.classList.add('active');
+            // Mark countdown as active
+            sessionStorage.setItem('countdownActive', 'true');
+            
+            // Hide logo and launch button sections
+            if (portalLogo) {
+                portalLogo.style.display = 'none';
+            }
+            if (portalLink) {
+                portalLink.style.display = 'none';
+            }
+            
+            // Show countdown section
+            countdownSection.style.display = 'flex';
             
             // Circle circumference (2 * PI * radius)
-            const radius = 90;
+            const radius = 57;
             const circumference = 2 * Math.PI * radius;
             
             let count = 5;
@@ -61,12 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (count < 0) {
                     clearInterval(countdownInterval);
-                    // Redirect to the target URL
-                    window.open(targetUrl, '_blank');
-                    // Hide modal
-                    modal.classList.remove('active');
-                    // Reset for next time
-                    progressCircle.style.strokeDashoffset = circumference;
+                    // Redirect to the target URL in same tab
+                    window.location.href = targetUrl;
                 }
             }, 1000);
         });
