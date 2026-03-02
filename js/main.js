@@ -26,16 +26,12 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const launchBtn = document.querySelector('.launch-btn');
     const countdownSection = document.getElementById('countdownSection');
-    const portalLogo = document.querySelector('.portal-logo');
     const portalLink = document.querySelector('.portal-link');
     
     // Reset page state function
     function resetPageState() {
         if (countdownSection) {
             countdownSection.style.display = 'none';
-        }
-        if (portalLogo) {
-            portalLogo.style.display = 'block';
         }
         if (portalLink) {
             portalLink.style.display = 'flex';
@@ -88,10 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Mark countdown as active
             sessionStorage.setItem('countdownActive', 'true');
             
-            // Hide logo and launch button sections
-            if (portalLogo) {
-                portalLogo.style.display = 'none';
-            }
+            // Hide launch button section
             if (portalLink) {
                 portalLink.style.display = 'none';
             }
