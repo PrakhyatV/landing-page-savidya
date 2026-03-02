@@ -234,6 +234,38 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Savidya Text Logo */
+.savidya-text-logo {
+    background-color: #e8e8e8;
+    padding: 40px 60px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.logo-bar {
+    height: 12px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo-bar.orange {
+    background-color: #f39c12;
+    margin-bottom: 20px;
+}
+
+.logo-bar.green {
+    background-color: #52b788;
+    margin-top: 20px;
+}
+
+.savidya-title {
+    font-size: 72px;
+    font-weight: 700;
+    color: #2d3e8f;
+    line-height: 1.1;
+    margin: 0;
+}
+
 .portal-link {
     display: flex;
     align-items: center;
@@ -323,6 +355,14 @@ body {
     .minister-image img {
         max-width: 300px;
     }
+
+    .savidya-title {
+        font-size: 48px;
+    }
+
+    .savidya-text-logo {
+        padding: 30px 40px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -365,5 +405,17 @@ body {
     .launch-btn {
         padding: 10px 20px;
         font-size: 14px;
+    }
+
+    .savidya-title {
+        font-size: 36px;
+    }
+
+    .savidya-text-logo {
+        padding: 20px 30px;
+    }
+
+    .logo-bar {
+        height: 8px;
     }
 }
