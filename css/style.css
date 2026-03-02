@@ -343,7 +343,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(26, 43, 92, 0.95);
+    background-color: rgba(240, 240, 240, 0.98);
     z-index: 9999;
     justify-content: center;
     align-items: center;
@@ -355,28 +355,87 @@ body {
 
 .countdown-content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.countdown-logo {
+    margin-bottom: 20px;
+}
+
+.savidya-text-logo-small {
+    background-color: transparent;
+    padding: 15px 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+.savidya-text-logo-small .logo-bar {
+    height: 6px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.savidya-text-logo-small .logo-bar.orange {
+    background-color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.savidya-text-logo-small .logo-bar.green {
+    background-color: #52b788;
+    margin-top: 10px;
+}
+
+.savidya-title-small {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2d3e8f;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.countdown-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.countdown-svg {
+    transform: rotate(-90deg);
+}
+
+.countdown-bg {
+    fill: none;
+    stroke: #e0e0e0;
+    stroke-width: 12;
+}
+
+.countdown-progress {
+    fill: none;
+    stroke: #f39c12;
+    stroke-width: 12;
+    stroke-linecap: round;
+    stroke-dasharray: 565.48;
+    stroke-dashoffset: 565.48;
+    transition: stroke-dashoffset 1s linear;
 }
 
 .countdown-number {
-    font-size: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
     font-weight: 700;
-    color: white;
-    animation: countdownPulse 1s ease-in-out;
+    color: #333;
 }
 
-@keyframes countdownPulse {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+.countdown-url {
+    font-size: 20px;
+    color: #555;
+    font-weight: 500;
 }
 
 /* Responsive Design */
@@ -447,8 +506,33 @@ body {
         max-width: 250px;
     }
 
+    .countdown-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .countdown-svg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .countdown-bg,
+    .countdown-progress {
+        r: 65;
+        cx: 75;
+        cy: 75;
+    }
+
     .countdown-number {
-        font-size: 120px;
+        font-size: 60px;
+    }
+
+    .savidya-title-small {
+        font-size: 24px;
+    }
+
+    .countdown-url {
+        font-size: 16px;
     }
 }
 
@@ -507,7 +591,37 @@ body {
         max-width: 200px;
     }
 
+    .countdown-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .countdown-svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    .countdown-bg,
+    .countdown-progress {
+        r: 50;
+        cx: 60;
+        cy: 60;
+        stroke-width: 8;
+    }
+
     .countdown-number {
-        font-size: 100px;
+        font-size: 50px;
+    }
+
+    .savidya-title-small {
+        font-size: 20px;
+    }
+
+    .savidya-text-logo-small .logo-bar {
+        width: 150px;
+    }
+
+    .countdown-url {
+        font-size: 14px;
     }
 }

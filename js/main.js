@@ -32,30 +32,41 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const modal = document.getElementById('countdownModal');
             const countdownNumberEl = document.getElementById('countdownNumber');
+            const progressCircle = document.getElementById('progressCircle');
             const targetUrl = this.getAttribute('href');
             
             // Show modal
             modal.classList.add('active');
             
+            // Circle circumference (2 * PI * radius)
+            const radius = 90;
+            const circumference = 2 * Math.PI * radius;
+            
             let count = 5;
             countdownNumberEl.textContent = count;
+            
+            // Start with full circle
+            progressCircle.style.strokeDashoffset = circumference;
             
             const countdownInterval = setInterval(function() {
                 count--;
                 
-                if (count > 0) {
+                if (count >= 0) {
                     countdownNumberEl.textContent = count;
-                    // Trigger animation by removing and re-adding class
-                    countdownNumberEl.style.animation = 'none';
-                    setTimeout(function() {
-                        countdownNumberEl.style.animation = 'countdownPulse 1s ease-in-out';
-                    }, 10);
-                } else {
+                    // Calculate progress (from 5 to 0)
+                    const progress = (5 - count) / 5;
+                    const offset = circumference - (progress * circumference);
+                    progressCircle.style.strokeDashoffset = offset;
+                }
+                
+                if (count < 0) {
                     clearInterval(countdownInterval);
                     // Redirect to the target URL
                     window.open(targetUrl, '_blank');
                     // Hide modal
                     modal.classList.remove('active');
+                    // Reset for next time
+                    progressCircle.style.strokeDashoffset = circumference;
                 }
             }, 1000);
         });
