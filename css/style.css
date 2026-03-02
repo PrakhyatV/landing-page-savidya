@@ -236,30 +236,31 @@ body {
 
 /* Savidya Text Logo */
 .savidya-text-logo {
-    background-color: #e8e8e8;
+    background-color: white;
     padding: 40px 60px;
     border-radius: 8px;
     text-align: center;
 }
 
 .logo-bar {
-    height: 12px;
+    height: 10px;
     width: 100%;
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .logo-bar.orange {
     background-color: #f39c12;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .logo-bar.green {
     background-color: #52b788;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .savidya-title {
-    font-size: 72px;
+    font-size: 56px;
     font-weight: 700;
     color: #2d3e8f;
     line-height: 1.1;
@@ -357,11 +358,15 @@ body {
     }
 
     .savidya-title {
-        font-size: 48px;
+        font-size: 40px;
     }
 
     .savidya-text-logo {
         padding: 30px 40px;
+    }
+
+    .logo-bar {
+        height: 8px;
     }
 }
 
@@ -408,7 +413,7 @@ body {
     }
 
     .savidya-title {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .savidya-text-logo {
@@ -416,6 +421,7 @@ body {
     }
 
     .logo-bar {
-        height: 8px;
+        height: 6px;
+        max-width: 300px;
     }
 }
