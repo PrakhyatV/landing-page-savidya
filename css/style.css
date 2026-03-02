@@ -228,12 +228,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/Launch 2 x.svg');
+    background-image: url('../img/Launch-2x.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.60;
     z-index: 0;
+    will-change: opacity;
 }
 
 .portal-box > * {
@@ -553,7 +554,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/Launch 2 x.svg');
+    background-image: url('../img/Launch-2x.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
