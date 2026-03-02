@@ -250,31 +250,31 @@ body {
 /* Savidya Text Logo */
 .savidya-text-logo {
     background-color: transparent;
-    padding: 25px 40px;
+    padding: 15px 40px;
     border-radius: 8px;
     text-align: center;
     display: inline-block;
 }
 
 .logo-bar {
-    height: 8px;
+    height: 14px;
     width: 100%;
-    max-width: 350px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .logo-bar.orange {
     background-color: #f39c12;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
 .logo-bar.green {
     background-color: #52b788;
-    margin-top: 12px;
+    margin-top: 18px;
 }
 
 .savidya-title {
-    font-size: 42px;
+    font-size: 72px;
     font-weight: 700;
     color: #2d3e8f;
     line-height: 1.1;
